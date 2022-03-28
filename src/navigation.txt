@@ -1,0 +1,13 @@
+ <nav className="navbar">
+        <h3>Leagues</h3>
+        <ul className="navbar--league">
+          <li onClick={() => setCompetitionId("2002")}>Bundesliga</li>
+          <li onClick={() => setCompetitionId("2003")}>Eredivise</li>
+          <li onClick={() => setCompetitionId("2014")}>La Liga</li>
+          <li onClick={() => setCompetitionId("2015")}>Ligue 1</li>
+          <li onClick={() => setCompetitionId("2017")}>Liga Nos</li>
+          <li onClick={() => setCompetitionId("2019")}>Série A</li>
+          <li onClick={() => setCompetitionId("2021")}>Premier League</li>
+        </ul>
+        <h1>{competition.name}</h1>
+      </nav>

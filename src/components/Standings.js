@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import Position from "./Position";
+
 export default function StandingsPage(props) {
   const [standings, setStandings] = React.useState([]);
   useEffect(() => {
@@ -24,6 +25,7 @@ export default function StandingsPage(props) {
     };
     getStandings();
   }, [props.cmpId]);
+
   const standingsData = standings.standings?.[0].table?.map((position) => {
     return (
       <Position
@@ -43,20 +45,21 @@ export default function StandingsPage(props) {
       />
     );
   });
+
   return (
     <div>
       <div className="match--container">
         <div className="match--result--and--goalscorers">
           <div className="match--result--container">
             <h1 className="standings--header">Team</h1>
-            <h1 className="match--team--name">J</h1>
-            <h1 className="match--team--name">V</h1>
-            <h1 className="match--team--name">E</h1>
-            <h1 className="match--team--name">D</h1>
-            <h1 className="match--team--name">GM</h1>
-            <h1 className="match--team--name">GS</h1>
-            <h1 className="match--team--name">DG</h1>
-            <h1 className="match--team--name">P</h1>
+            <h1 className="match--team--stats">J</h1>
+            <h1 className="match--team--stats">V</h1>
+            <h1 className="match--team--stats">E</h1>
+            <h1 className="match--team--stats">D</h1>
+            <h1 className="match--team--stats">GM</h1>
+            <h1 className="match--team--stats">GS</h1>
+            <h1 className="match--team--stats">DG</h1>
+            <h1 className="match--team--stats">P</h1>
           </div>
         </div>
       </div>

@@ -5,7 +5,9 @@ function Navbar() {
   return (
     <AppBar>
       <Toolbar>
-        <Typography variant="h4">Football App</Typography>
+        <a href="/">
+          <Typography variant="h4">Football App</Typography>
+        </a>
       </Toolbar>
     </AppBar>
   );

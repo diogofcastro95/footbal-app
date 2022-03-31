@@ -51,6 +51,10 @@ code {
 }
 .match--team--name {
   font-size: 16px;
+  width: 300px;
+}
+.match--team--stats {
+  font-size: 16px;
   width: 80px;
 }
 .match--result {
@@ -104,7 +108,7 @@ code {
 .match--result--container > img {
   max-width: 3%;
   height: auto;
-  max-height: 40px;
+  max-height: 30px;
   border-radius: 10px;
   padding: 5px;
   align-items: center;
@@ -119,9 +123,44 @@ code {
 }
 .main--navigation {
   display: flex;
-  list-style: none;
+  justify-content: center;
+  margin: 10px;
 }
-.main--navigation > li {
+
+.navigation--link {
+  font-size: 20px;
+  color: white;
+}
+
+a {
+  text-decoration: none;
   color: aliceblue;
-  width: 80px;
+}
+
+.button {
+  background-color: #3f51b5; /* Green */
+  border: none;
+  color: black;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+.button1 {
+  background-color: white;
+  border-radius: 10px;
+  color: black;
+  border: 2px solid #3f51b5;
+}
+.button1:hover {
+  background-color: #3f51b5;
+  color: white;
+}
+.button1:active {
+  background-color: #3f51b5;
+  color: white;
 }

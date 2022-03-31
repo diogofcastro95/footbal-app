@@ -9,8 +9,13 @@ import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 
 function App() {
-  const [competitionId, setCompetitionId] = React.useState("2017");
-  const [competition, setCompetition] = React.useState("Primeira Liga");
+  const [competitionId, setCompetitionId] = React.useState();
+  const [value, setValue] = React.useState(0);
+
+  const handleChange = (event, newValue) => {
+    setValue(newValue);
+  };
+
   useEffect(() => {
     const getCompetition = () => {
       fetch(`http://api.football-data.org/v2/competitions/${competitionId}`, {
@@ -22,10 +27,6 @@ function App() {
         },
       })
         .then((response) => response.json())
-        .then((responseData) => {
-          setCompetition(responseData);
-          //console.log(responseData);
-        })
         .catch((error) => console.log(error));
     };
     getCompetition();
@@ -37,7 +38,11 @@ function App() {
       <br></br>
       <br></br>
       <Box sx={{ width: "100%", bgcolor: "background.paper" }}>
-        <Tabs centered>
+        <Tabs
+          value={competitionId > 0 && value}
+          onChange={handleChange}
+          centered
+        >
           <Tab label="Bundesliga" onClick={() => setCompetitionId("2002")} />
           <Tab label="Eredivise" onClick={() => setCompetitionId("2003")} />
           <Tab label="La Liga" onClick={() => setCompetitionId("2014")} />
@@ -50,15 +55,14 @@ function App() {
           />
         </Tabs>
       </Box>
-
-      <MainNavigation />
+      {competitionId > 0 && <MainNavigation />}
       <Routes>
         <Route
           path="/fixtures"
           element={<FixturesPage cmpId={competitionId} />}
         />
         <Route
-          path="/standings"
+          path="/standings/*"
           element={<StandingsPage cmpId={competitionId} />}
         />
       </Routes>
